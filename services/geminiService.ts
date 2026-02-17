@@ -1,7 +1,18 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const getAIClient = () => {
+  try {
+    // @ts-ignore
+    const apiKey = process.env.API_KEY || import.meta.env.VITE_GEMINI_API_KEY || '';
+    return new GoogleGenAI({ apiKey });
+  } catch (error) {
+    console.warn("AI Client Initialization Failed:", error);
+    return null;
+  }
+};
+
+const ai = getAIClient();
 
 export interface ChatMessage {
   role: 'user' | 'model';
@@ -9,9 +20,10 @@ export interface ChatMessage {
 }
 
 export const generateAIResponse = async (history: ChatMessage[], userInput: string) => {
+  if (!ai) return "AI service is currently unavailable.";
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-2.0-flash', // Updated to a stable model name
       contents: [
         ...history.map(m => ({
           role: m.role,
