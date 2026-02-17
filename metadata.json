@@ -1,0 +1,8 @@
+{
+  "name": "ProBiora Health | Premium Modernization",
+  "description": "A high-end modernization of the ProBiora Health homepage, focusing on superior hierarchy, fluid transitions, and a trusted medical-grade aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

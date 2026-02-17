@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProBiora Health | Oral Probiotics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+              serif: ['Fraunces', 'serif'],
+            },
+            colors: {
+              probiora: {
+                50: '#f0f9fa',
+                100: '#e0f2f4',
+                200: '#bae2e8',
+                300: '#7dc4d1',
+                400: '#38a3b8',
+                500: '#2d879c',
+                600: '#256e7f',
+                700: '#1f5a68',
+                800: '#2d5a88', // Brand Navy
+                900: '#1a3a5a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @keyframes slow-float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+      .animate-slow-float {
+        animation: slow-float 8s ease-in-out infinite;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      body {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+      }
+      .medical-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f9fa 100%);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-slate-800 overflow-x-hidden">
+    <div id="root"></div>
+</body>
+</html>
